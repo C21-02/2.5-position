@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            background-image: url(https://foni.club/uploads/posts/2023-01/1674348081_foni-club-p-fon-fioletovogo-tsveta-2.jpg);
+            background-size: cover; 
+            background-repeat: no-repeat;  
+            font-family: Arial, sans-serif; 
+        }
+
+        section {
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 75%;
+            padding: 10px;
+            margin: 0px 40px 0px 45px;
+            float: right;
+            box-shadow: 10px 10px 10px;
+        }
+
+        .container {
+            position: relative; /* Відносне позиціонування контейнера */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .box.static {
+            position: static; /* Статичне позиціонування */
+            background-color: #d36bff;
+        }
+
+        .box.relative {
+            position: relative; /* Відносне позиціонування */
+            background-color: #ec6bff;
+            top: 50px; /* Зсув від верхнього краю на 50px */
+            left: 130px; /* Зсув від лівого краю на 0px */
+        }
+
+        .box.absolute {
+            position: absolute; /* Абсолютне позиціонування */
+            background-color: #ff2be6;
+            top: 65px; /* Зсув від верхнього краю на 60px */
+            left: 65px; /* Зсув від лівого краю на 0px */
+        }
+
+        .box.fixed {
+            position: fixed; /* Фіксоване позиціонування */
+            background-color: #db0091;
+            bottom: 0px; /* Зсув від нижнього краю на 0px */
+            right: 0px; /* Зсув від правого краю на 0px */
+            z-index: 1; /* Властивість z-index, вказує на рівень навколишніх елементів */
+        }
+
+        .box {
+            border: 2px solid black;
+            border-radius: 20px;
+            box-shadow: 10px 10px 10px;
+            text-align: center;
+            height: 100px;
+            width: 100px;
+            margin: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .box:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <section style="background-color: #d36bff;">
+        <h1>Static</h1>
+        <p>HTML-елементи за замовчуванням розташовані статично. На статичні елементи не впливають властивості top, bottom, left та right.</p>
+    </section>
+
+    <section  style="background-color: #ec6bff;">
+        <h1>Relative</h1>
+        <p>Позиціонується відносно свого нормального положення. Встановлення властивостей top, right, bottom та left відносно позиціонованого елемента призведе до відхилення від його нормального положення. Інший зміст не буде відкоректовано, щоб вписатися в будь-який пробіл, залишений елементом.</p>
+    </section>
+
+    <section  style="background-color: #ff2be6;">
+        <h1>Absolute</h1>
+        <p>Позиціонується відносно найближчого позиціонованого предка (замість позиціонування відносно вікна перегляду, як фіксований). Однак, якщо елемент з абсолютним позиціонуванням не має позиціонованих предків, він використовує тіло документа і переміщується разом з прокруткою сторінки.</p>
+    </section>
+
+    <section  style="background-color: #db0091;">
+        <h1>Fixed</h1>
+        <p>Позиціонується відносно області перегляду, що означає, що він завжди залишається на тому самому місці, навіть якщо сторінка прокручується. Властивості top, right, bottom та left використовуються для позиціонування елемента.</p>
+    </section>
+
+    <div class="container">
+        <div class="box static">
+            <br><p>Static</p>
+        </div>
+
+        <div class="box relative">
+            <br><p>Relative</p>
+        </div>
+
+        <div class="box absolute">
+            <br><p>Absolute</p>
+        </div>
+
+        <div class="box fixed">
+            <br><p>Fixed</p>
+        </div>
+    </div>
+</body>
+</html>
